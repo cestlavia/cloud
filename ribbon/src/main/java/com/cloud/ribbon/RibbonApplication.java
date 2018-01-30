@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-@EnableDiscoveryClient
+@EnableDiscoveryClient//向Eureka服务发现中心注册
 @SpringBootApplication
 @RestController
 public class RibbonApplication {
