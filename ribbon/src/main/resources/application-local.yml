@@ -1,5 +1,8 @@
+spring:
+  profiles: local
+
 server:
-  port: 8802
+  port: 8804
 eureka:
   client:
     service-url:
