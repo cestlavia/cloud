@@ -2,8 +2,10 @@ package com.cloud.feign;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
+import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
 
 
 /**
@@ -12,11 +14,20 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
  * Feign支持可插拔的编码器和解码器；Feign默认机场了ribbon，并和eureka结合，默认实现了负载均衡的效果。
  *
  * ### Feign采用的是基于接口的注解
- * ### Feign整合了ribbon
+ * ### Feign整合了Ribbon
+ * ### Feign集成了Hystrix
  */
 @EnableFeignClients//@EnableFeignClients注解开启Feign的功能
 @EnableDiscoveryClient
 @SpringBootApplication
+@EnableHystrixDashboard//开启Hystrix仪表盘
+/*
+ * 开启断路器，使用Hystrix仪表盘需要@EnableCircuitBreaker,
+ * 并引入spring-cloud-starter-hystrix、
+ * spring-boot-starter-actuator、
+ * spring-cloud-starter-hystrix-dashboard三个jar包的依赖
+ */
+@EnableCircuitBreaker
 public class FeignApplication {
 
 	public static void main(String[] args) {
