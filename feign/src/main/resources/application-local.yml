@@ -7,3 +7,7 @@ server:
   port: 8805
 spring:
   profiles: local
+
+feign:
+  hystrix:
+    enabled: true #开启断路器，默认是关闭的
