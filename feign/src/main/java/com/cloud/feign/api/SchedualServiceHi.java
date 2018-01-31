@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient(value = "eureka-client")//通过@ FeignClient（“服务名”），来指定调用哪个服务
+@FeignClient(value = "eureka-client", fallback = SchedualServiceHiHystrix.class)//通过@ FeignClient（“服务名”），来指定调用哪个服务
 public interface SchedualServiceHi {
 
 	@RequestMapping(value = "/hi", method = RequestMethod.GET)
