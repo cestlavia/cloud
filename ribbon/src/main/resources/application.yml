@@ -8,3 +8,11 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8801/eureka/
+#    fetch-registry: true #默认值true
+#ribbon:
+#  http:
+#    client:
+#      enabled: true
+#  eureka:
+#    enabled: true
+

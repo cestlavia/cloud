@@ -22,9 +22,9 @@ import org.springframework.web.client.RestTemplate;
  * ServerListFilter
  * ILoadBlancer
  */
-@EnableDiscoveryClient//向Eureka服务发现中心注册
 @SpringBootApplication
 @EnableHystrix//开启Hystrix
+@EnableDiscoveryClient//向Eureka服务发现中心注册
 public class RibbonApplication {
 
 	public static void main(String[] args) {

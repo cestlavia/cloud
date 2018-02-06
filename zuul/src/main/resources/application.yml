@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: zuul
+server:
+  port: 8806
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8801/eureka/
+zuul:
+  routes:
+    api-a:
+      path: /api-a/**
+      serviceId: ribbon #serviceId拼写错误导致zuul通过"/api-a/"调用服务抛出了异常【ref:2018-01-31Ribbon】
+# com.netflix.zuul.exception.ZuulException: Forwarding error
+# Caused by: com.netflix.client.ClientException: Load balancer does not have available server for client: api-a
+    api-b:
+      path: /api-b/**
+      serviceId: feign
