@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      label: master
+      profile: dev
+      #配置中心服务的地址
+      uri: http://localhost:8888/
+server:
+  port: 8807
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8801/eureka/
