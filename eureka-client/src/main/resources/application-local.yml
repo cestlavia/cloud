@@ -4,3 +4,21 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8801/eureka/
+
+spring:
+## RabbitMQ配置
+  rabbitmq:
+    host: 47.100.104.118
+    port: 5672
+    virtual-host: facemeng
+    username: facemeng
+    password: facemeng
+## thymeleaf配置
+  thymeleaf:
+    mode: HTML5
+    encoding: UTF-8
+    content-type: text/html
+    cache: false
+    prefix: classpath:/templates/
+    check-template-location: true
+    suffix: .html
